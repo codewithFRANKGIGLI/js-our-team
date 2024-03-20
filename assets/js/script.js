@@ -24,15 +24,16 @@ const teamMembersObjArray = [
 // BONUS 1:
 // Trasformare la stringa foto in una immagine effettiva
 printTeamInfoToDOM(teamMembersObjArray);
+
 function printTeamInfoToDOM() {
+    
     let htmlString = '';
     let divContainer = document.createElement('div');
-    for (let i = 0; i < teamMembersObjArray.length; i++) {
-        const member = teamMembersObjArray[i];
-        // BONUS 2:
-        // Organizzare i singoli membri in card/schede
-        // Aggiungo le classi bootstrap
-        htmlString.innerHTML += `
+
+    for(let key in teamMembersObjArray) {
+        console.log(teamMembersObjArray[key])
+        let member = teamMembersObjArray[key];
+        divContainer.innerHTML += `
         <div class="team-card card">
             <img src="${member.photo}" alt="${member.name}-foto" />
             <div class="card-body">
@@ -41,8 +42,22 @@ function printTeamInfoToDOM() {
         </div>
         `;
     }
-    console.log(htmlString);
-    divContainer.innerHTML = htmlString;
+    // WARNING - IL CODICE SEGUENTE NON FUNZIONA
+    // for (let i = 0; i < teamMembersObjArray.length; i++) {
+    //     let member = teamMembersObjArray[i];
+    //     // BONUS 2:
+    //     // Organizzare i singoli membri in card/schede
+    //     // Aggiungo le classi bootstrap
+    //     console.log(htmlString);
+    //     htmlString.innerHTML += `
+    //     <div class="team-card card">
+    //         <img src="${member.photo}" alt="${member.name}-foto" />
+    //         <div class="card-body">
+    //         <h3 class= "card-title">${member.name}</h3>
+    //         <p><strong>Ruolo:</strong> ${member.role}</p></div>
+    //     </div>
+    //     `;
+    // }
     document.body.appendChild(divContainer);
 }
 
