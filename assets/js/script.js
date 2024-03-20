@@ -27,20 +27,18 @@ printTeamInfoToDOM(teamMembersObjArray);
 
 function printTeamInfoToDOM(objArray) {
     
-    let htmlString = '';
-    let divContainer = document.createElement('div');
-    divContainer.className = "container-fluid";
-    // let divRow = divContainer.document.createElement('div');
+    let divRow = document.getElementById('row');
 
     for(let key in objArray) {
-        console.log(objArray[key])
         let member = objArray[key];
-        divContainer.innerHTML += `
-        <div class="team-card card">
-            <img src="${member.photo}" alt="${member.name}-foto" />
-            <div class="card-body">
-            <h3 class= "card-title">${member.name}</h3>
-            <p><strong>Ruolo:</strong> ${member.role}</p></div>
+        divRow.innerHTML += `
+        <div class="col-4 p-1 column-gap-1">
+            <div class="team-card card h-100">
+                <img class="card-img-top rounded" src="${member.photo}" alt="${member.name}-foto" />
+                <div class="card-body">
+                <h3 class= "card-title">${member.name}</h3>
+                <p><strong>Ruolo:</strong> ${member.role}</p></div>
+            </div>
         </div>
         `;
     }
@@ -60,6 +58,5 @@ function printTeamInfoToDOM(objArray) {
     //     </div>
     //     `;
     // }
-    document.body.appendChild(divContainer);
 }
 
