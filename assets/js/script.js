@@ -21,25 +21,25 @@ for(let i = 0; i < teamMembersObjArray.length; i++) {
 
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
+// BONUS 1:
+// Trasformare la stringa foto in una immagine effettiva
 printTeamInfoToDOM(teamMembersObjArray);
 function printTeamInfoToDOM() {
     let divContainer = document.createElement('div');
-    document.body.appendChild(divContainer);
     for (let i = 0; i < teamMembersObjArray.length; i++) {
         const member = teamMembersObjArray[i];
-        divContainer.innerHTML += `<div class="team-card">`;
-        divContainer.innerHTML += `   <h3>${member.name}</h3>`;
-        divContainer.innerHTML += `   <p><strong>Ruolo:</strong> ${member.role}</p>`;
-        divContainer.innerHTML += `   <img src="${member.photo}" alt="${member.name}-foto" />`;
-        divContainer.innerHTML += `</div>`;
+        // BONUS 2:
+        // Organizzare i singoli membri in card/schede
+        // Aggiungo le classi bootstrap
+        divContainer.innerHTML = `
+        <div class="team-card card">
+            <img src="${member.photo}" alt="${member.name}-foto" />
+            <div class="card-body">
+            <h3 class= "card-title">${member.name}</h3>
+            <p><strong>Ruolo:</strong> ${member.role}</p></div>
+        </div>
+        `;
+        document.body.appendChild(divContainer);
     }
-    console.log(divContainer);
 }
 
-
-
-
-// BONUS 1:
-// Trasformare la stringa foto in una immagine effettiva
-// BONUS 2:
-// Organizzare i singoli membri in card/schede
