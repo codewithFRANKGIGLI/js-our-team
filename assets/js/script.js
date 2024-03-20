@@ -12,12 +12,12 @@ const teamMembersObjArray = [
 ]
 // MILESTONE 1:
 // Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
-for(let i = 0; i < teamMembersObjArray.length; i++) {
-    const member = teamMembersObjArray[i];
-    console.log(`Nome: ${member.name}`);
-    console.log(`Ruolo: ${member.role}`);
-    console.log(`Foto: ${member.photo}\n`);
-}
+// for(let i = 0; i < teamMembersObjArray.length; i++) {
+//     const member = teamMembersObjArray[i];
+//     console.log(`Nome: ${member.name}`);
+//     console.log(`Ruolo: ${member.role}`);
+//     console.log(`Foto: ${member.photo}\n`);
+// }
 
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
@@ -25,13 +25,14 @@ for(let i = 0; i < teamMembersObjArray.length; i++) {
 // Trasformare la stringa foto in una immagine effettiva
 printTeamInfoToDOM(teamMembersObjArray);
 function printTeamInfoToDOM() {
+    let htmlString = '';
     let divContainer = document.createElement('div');
     for (let i = 0; i < teamMembersObjArray.length; i++) {
         const member = teamMembersObjArray[i];
         // BONUS 2:
         // Organizzare i singoli membri in card/schede
         // Aggiungo le classi bootstrap
-        divContainer.innerHTML = `
+        htmlString.innerHTML += `
         <div class="team-card card">
             <img src="${member.photo}" alt="${member.name}-foto" />
             <div class="card-body">
@@ -39,7 +40,9 @@ function printTeamInfoToDOM() {
             <p><strong>Ruolo:</strong> ${member.role}</p></div>
         </div>
         `;
-        document.body.appendChild(divContainer);
     }
+    console.log(htmlString);
+    divContainer.innerHTML = htmlString;
+    document.body.appendChild(divContainer);
 }
 
