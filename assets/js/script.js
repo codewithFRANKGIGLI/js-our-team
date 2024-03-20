@@ -19,10 +19,24 @@ for(let i = 0; i < teamMembersObjArray.length; i++) {
     console.log(`Foto: ${member.photo}\n`);
 }
 
-
-
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
+printTeamInfoToDOM(teamMembersObjArray);
+function printTeamInfoToDOM() {
+    let divContainer = document.createElement('div');
+    for (let i = 0; i < teamMembersObjArray.length; i++) {
+        const member = teamMembersObjArray[i];
+        divContainer.innerHTML += `<div class="team-card">`;
+        divContainer.innerHTML += `   <h3>${member.name}</h3>`;
+        divContainer.innerHTML += `   <p><strong>Ruolo:</strong> ${member.role}</p>`;
+        divContainer.innerHTML += `   <img src="${member.photo}" alt="${member.name}-foto" />`;
+        divContainer.innerHTML += `</div>`;
+    }
+}
+
+
+
+
 // BONUS 1:
 // Trasformare la stringa foto in una immagine effettiva
 // BONUS 2:
