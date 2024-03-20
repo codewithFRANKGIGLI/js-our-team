@@ -25,14 +25,16 @@ const teamMembersObjArray = [
 // Trasformare la stringa foto in una immagine effettiva
 printTeamInfoToDOM(teamMembersObjArray);
 
-function printTeamInfoToDOM() {
+function printTeamInfoToDOM(objArray) {
     
     let htmlString = '';
     let divContainer = document.createElement('div');
+    divContainer.className = "container-fluid";
+    // let divRow = divContainer.document.createElement('div');
 
-    for(let key in teamMembersObjArray) {
-        console.log(teamMembersObjArray[key])
-        let member = teamMembersObjArray[key];
+    for(let key in objArray) {
+        console.log(objArray[key])
+        let member = objArray[key];
         divContainer.innerHTML += `
         <div class="team-card card">
             <img src="${member.photo}" alt="${member.name}-foto" />
