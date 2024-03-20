@@ -4,10 +4,10 @@
 // Creare l’array di oggetti con le informazioni fornite.
 const teamMembersObjArray = [
     { name: 'Wayne Barnett', role: 'Founder & CEO', photo: 'assets/img/wayne-barnett-founder-ceo.jpg' },
-    { name: 'Agela Caroll', role: 'Chief Editor', photo: 'assets/img/angela-caroll-chief-editor.jpg' },
+    { name: 'Angela Caroll', role: 'Chief Editor', photo: 'assets/img/angela-caroll-chief-editor.jpg' },
     { name: 'Walter Gordon', role: 'Office Manager', photo: 'assets/img/walter-gordon-office-manager.jpg' },
     { name: 'Angela Lopez', role: 'Social Media Manager', photo: 'assets/img/angela-lopez-social-media-manager.jpg' },
-    { name: 'Frank Gigli', role: 'Developer', photo: 'assets/img/frank-gigli-developer.jpg' },
+    { name: 'Frank Gigli', role: 'Developer', photo: 'assets/img/frank-gigli-developer.png' },
     { name: 'Barbara Ramos', role: 'Graphic Designer', photo: 'assets/img/barbara-ramos-graphic-designer.jpg' },
 ]
 // MILESTONE 1:
@@ -24,6 +24,7 @@ for(let i = 0; i < teamMembersObjArray.length; i++) {
 printTeamInfoToDOM(teamMembersObjArray);
 function printTeamInfoToDOM() {
     let divContainer = document.createElement('div');
+    document.body.appendChild(divContainer);
     for (let i = 0; i < teamMembersObjArray.length; i++) {
         const member = teamMembersObjArray[i];
         divContainer.innerHTML += `<div class="team-card">`;
@@ -32,6 +33,7 @@ function printTeamInfoToDOM() {
         divContainer.innerHTML += `   <img src="${member.photo}" alt="${member.name}-foto" />`;
         divContainer.innerHTML += `</div>`;
     }
+    console.log(divContainer);
 }
 
 
