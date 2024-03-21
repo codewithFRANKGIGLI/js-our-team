@@ -12,17 +12,16 @@ const teamMembersObjArray = [
 ]
 // MILESTONE 1:
 // Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
-// for(let i = 0; i < teamMembersObjArray.length; i++) {
-//     const member = teamMembersObjArray[i];
-//     console.log(`Nome: ${member.name}`);
-//     console.log(`Ruolo: ${member.role}`);
-//     console.log(`Foto: ${member.photo}\n`);
-// }
+for(let i = 0; i < teamMembersObjArray.length; i++) {
+    const member = teamMembersObjArray[i];
+    console.log(`Nome: ${member.name}`);
+    console.log(`Ruolo: ${member.role}`);
+    console.log(`Foto: ${member.photo}`);
+}
 
 // MILESTONE 2:
-// Stampare le stesse informazioni su DOM sottoforma di stringhe
-// BONUS 1:
-// Trasformare la stringa foto in una immagine effettiva
+// Stampare le stesse informazioni su DOM 
+
 printTeamInfoToDOM(teamMembersObjArray);
 
 function printTeamInfoToDOM(objArray) {
@@ -42,21 +41,5 @@ function printTeamInfoToDOM(objArray) {
         </div>
         `;
     }
-    // WARNING - IL CODICE SEGUENTE NON FUNZIONA
-    // for (let i = 0; i < teamMembersObjArray.length; i++) {
-    //     let member = teamMembersObjArray[i];
-    //     // BONUS 2:
-    //     // Organizzare i singoli membri in card/schede
-    //     // Aggiungo le classi bootstrap
-    //     console.log(htmlString);
-    //     htmlString.innerHTML += `
-    //     <div class="team-card card">
-    //         <img src="${member.photo}" alt="${member.name}-foto" />
-    //         <div class="card-body">
-    //         <h3 class= "card-title">${member.name}</h3>
-    //         <p><strong>Ruolo:</strong> ${member.role}</p></div>
-    //     </div>
-    //     `;
-    // }
 }
 
